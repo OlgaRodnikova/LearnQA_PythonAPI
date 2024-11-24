@@ -1,6 +1,6 @@
 import requests
 
-response = requests.get("https://playground.learnqa.ru/api/long_redirect", allow_redirects=True)
+response = requests.get("https://playground.learnqa.ru/api/long_redirect")
 
 number_of_redirects = len(response.history)
 print(f"Количество редиректов в запросе равно {number_of_redirects}")
