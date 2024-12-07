@@ -5,6 +5,7 @@ for user_password in list_of_passwords:
     payload = {"login": "super_admin", "password": user_password}
     response_1 = requests.post("https://playground.learnqa.ru/ajax/api/get_secret_password_homework", data=payload)
     cookie_response = response_1.cookies.get('auth_cookie')
+    print(response_1.cookies)
 
     cookies = {"auth_cookie": cookie_response}
     response = requests.post("https://playground.learnqa.ru/ajax/api/check_auth_cookie", cookies=cookies)
